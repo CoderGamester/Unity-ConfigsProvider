@@ -23,6 +23,12 @@ namespace GameLovers.ConfigsProvider
 		bool TryGetConfig<T>(int id, out T config);
 		
 		/// <summary>
+		/// Requests the single unique Config of <typeparamref name="T"/> type.
+		/// Returns true if there is a <paramref name="config"/> of <typeparamref name="T"/> type,  false otherwise.
+		/// </summary>
+		bool TryGetConfig<T>(out T config);
+		
+		/// <summary>
 		/// Requests the single unique Config of <typeparamref name="T"/> type
 		/// </summary>
 		T GetConfig<T>();

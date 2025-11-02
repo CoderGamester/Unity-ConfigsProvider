@@ -2,7 +2,7 @@
   "name": "com.gamelovers.configsprovider",
   "displayName": "Configs Provider",
   "author": "Miguel Tomas",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "unity": "6000.0",
   "license": "MIT",
   "type": "library",
