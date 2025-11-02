@@ -29,11 +29,17 @@ namespace GameLovers.ConfigsProvider
 		}
 
 		/// <inheritdoc />
-		public T GetConfig<T>()
+		public bool TryGetConfig<T>(out T config)
 		{
 			var dictionary = GetConfigsDictionary<T>();
 
-			if (!dictionary.TryGetValue(_singleConfigId, out var config))
+			return dictionary.TryGetValue(_singleConfigId, out config);
+		}
+
+		/// <inheritdoc />
+		public T GetConfig<T>()
+		{
+			if (!TryGetConfig<T>(out var config))
 			{
 				throw new InvalidOperationException($"The Config container for {typeof(T)} is not a single config container. " +
 				                                    $"Use either 'GetConfig<T>(int id)' or 'GetConfigsList<T>()' to get your needed config");
